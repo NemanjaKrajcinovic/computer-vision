@@ -16,12 +16,22 @@
 # changes:
 # - 4.4.2020. – Nemanja Krajcinovic
 # - Set table size 5x7
+# - 7.6.2020. - Natasa Avramovic
+# - Added create_charuco_board()
 #
 ############################################################################
-from cv2 import *
+from cv2 import aruco 
 
-dictionary = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_4X4_50)
-board = cv2.aruco.CharucoBoard_create(5, 7, .025, .0125, dictionary)
-img = board.draw((200 * 5, 200 * 7))
-detectorParams = cv2.aruco.DetectorParameters_create()
-cv2.imwrite('charuco.png', img)
+def create_charuco_board():
+    '''
+    Creates ChArUco board in png format
+    '''
+    dictionary = aruco.getPredefinedDictionary(aruco.DICT_4X4_50)
+    board = aruco.CharucoBoard_create(5, 7, .025, .0125, dictionary)
+    img = board.draw((200 * 5, 200 * 7))
+    detectorParams = aruco.DetectorParameters_create()
+    cv2.imwrite('charuco.png', img)
+    
+if __name__ == "__main__":
+    create_charuco_board()
+    
