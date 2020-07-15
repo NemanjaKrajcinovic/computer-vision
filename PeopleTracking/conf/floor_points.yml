@@ -1,0 +1,13 @@
+floor_points:
+  bottom_left:
+  - 185
+  - 638
+  bottom_right:
+  - 987
+  - 703
+  top_left:
+  - 447
+  - 323
+  top_right:
+  - 920
+  - 371
